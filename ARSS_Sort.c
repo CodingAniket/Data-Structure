@@ -17,9 +17,12 @@ void ArssSort(int *arr, int size)
                 }
             }
         }
-        swap = *(arr + i);
-        *(arr + i) = *(arr + index);
-        *(arr + index) = swap;
+        if (index != i)
+        {
+            swap = *(arr + i);
+            *(arr + i) = *(arr + index);
+            *(arr + index) = swap;
+        }
     }
     printf("Sorted Element\n");
     for (int i = 0; i < size; i++)
